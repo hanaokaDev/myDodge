@@ -15,10 +15,13 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        PlayerController playerController = other.GetComponent<PlayerController>();
-        if (playerController != null)
+        if(other.tag == "Player")
         {
-            playerController.Die();
+            PlayerController playerController = other.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.Die();
+            }
         }
         // if (other.CompareTag("Player"))
         // {

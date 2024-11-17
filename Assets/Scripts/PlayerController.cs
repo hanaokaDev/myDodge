@@ -26,7 +26,8 @@ public class PlayerController: MonoBehaviour
     }
     public void Die()
     {
-        Debug.Log("Player died");
         gameObject.SetActive(false);
+        GameManager gameManager = FindAnyObjectByType<GameManager>();
+        gameManager.EndGame();
     }
 }
